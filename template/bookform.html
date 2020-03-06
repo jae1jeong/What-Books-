@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+{% csrf_token %}
+    <h1 style="margin-bottom: 50px;" class="text-center">
+        도서 검색
+    </h1>
+<form action="{% url 'search_book' %}" method="get" class="text-center">
+    <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="검색" name="query" aria-label="검색" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button submit" id="button-addon2">검색</button>
+  </div>
+</div>
+</form>
+</div>
+
+<script>
+  var search = document.querySelector("input[name=query]")
+  var submit = document.querySelector(".input-group-append > button")
+  
+ 
+  submit.addEventListener("click",function(e){
+    if (search.value ==''){
+      alert("단어를 입력해주세요.");
+      e.preventDefault();
+    }
+  });
+</script>
+{% endblock %}
+

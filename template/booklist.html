@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+  .book {
+    border: 1px black solid;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+  td>img{
+    padding: 12px 12px 12px 12px;
+    height: 180px;
+    width: 120px;
+  }
+  .discount{
+    color:#e45374;
+    font-size: 18px;
+  }
+</style>
+<div class="container">
+  <h1 class="text-center">
+    검색결과
+  </h1>
+  {% for item in items %}
+  {% load humanize %}
+  <ul>
+    <a>
+      <div class="book">
+
+
+        <table>
+          <tbody>
+            <tr>
+             
+              <td><img src="{{item.image}}" alt=""></td>
+              <td>
+                <a href="{{item.link}}">{{item.title|safe}}</a><br>
+                {{item.author}}  | {{item.pubdate}}<br>
+                {{item.price|intcomma}}원 → <span class="discount">{{item.discount|intcomma}}원</span><br>
+              </td>
+   
+            </tr>
+          </tbody>
+        </table>
+        <!-- <a href="{{item.link}}">
+          <span><img src="{{item.image}}" alt=""></span>
+          <span>{{item.title|safe}}<br></span>
+          <span>{{item.pubdate}}<br></span>
+          <span>{{item.price|intcomma}}원<br></span>
+          <span>{{item.isbn}}</span>
+        </a> -->
+      </div>
+    
+
+  </ul>
+  {% endfor %}
+  <button type="button" class="btn btn-outline-secondary" style="float:right;"><a href="/"
+      style="color:black;">뒤로가기</a></button>
+</div>
+
+
+{% endblock %}
