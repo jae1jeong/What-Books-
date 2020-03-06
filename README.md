@@ -15,5 +15,13 @@
 ![프로젝트이미지](./whatbooks.png)
 
 
+### 사용하기
+네이버 개발홈페이지에서 API 아이디 발급 후 
+
+__book/views.py__ 수정
+
+        CLIENT_ID = "ID입력"
+        CLIENT_SECERET = "SECRET입력"
+
 
 
