@@ -8,8 +8,12 @@
 + Vanila JS
 + Bootstrap
 
++ 네이버 API를 호출해 데이터베이스에 저장하지 않고 그대로 랜더링
++ JS로 간단한 0글자 검색 방지 로직 구현
+
+
 ![프로젝트이미지](./whatbooks.png)
 
----whatbooks--- 
+
 
 
